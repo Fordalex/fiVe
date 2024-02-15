@@ -1,0 +1,45 @@
+/* person facing right */
+
+.person-walking-right {
+    image-rendering: pixelated;
+    background-image: url('../sprites/Walking.gif');
+    background-size: 100px 100px;
+    position: absolute;
+    left: 0px;
+    height: 100px;
+    width: 100px;
+}
+
+.person-attacking-right {
+    image-rendering: pixelated;
+    background-image: url('../sprites/Punching.gif');
+    background-size: 100px 100px;
+    position: absolute;
+    left: 0px;
+    height: 100px;
+    width: 100px;
+}
+
+/* person facing left */
+
+.person-walking-left {
+    image-rendering: pixelated;
+    background-image: url('../sprites/Walking.gif');
+    background-size: 100px 100px;
+    position: absolute;
+    left: 1000px;
+    height: 100px;
+    width: 100px;
+    transform: scaleX(-1);
+}
+
+.person-attacking-left {
+    image-rendering: pixelated;
+    background-image: url('../sprites/Punching.gif');
+    background-size: 100px 100px;
+    position: absolute;
+    left: 1000px;
+    height: 100px;
+    width: 100px;
+    transform: scaleX(-1);
+}
