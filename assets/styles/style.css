@@ -1,3 +1,17 @@
+#gameContainer {
+    position: relative;
+    width: 1200px;
+    height: 600px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.button-containers {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+}
+
 /* person facing right */
 
 .person-walking-right {
@@ -5,7 +19,6 @@
     background-image: url('../sprites/Walking.gif');
     background-size: 100px 100px;
     position: absolute;
-    left: 0px;
     height: 100px;
     width: 100px;
 }
@@ -15,7 +28,6 @@
     background-image: url('../sprites/Punching.gif');
     background-size: 100px 100px;
     position: absolute;
-    left: 0px;
     height: 100px;
     width: 100px;
 }
@@ -27,7 +39,6 @@
     background-image: url('../sprites/Walking.gif');
     background-size: 100px 100px;
     position: absolute;
-    left: 1000px;
     height: 100px;
     width: 100px;
     transform: scaleX(-1);
@@ -38,8 +49,19 @@
     background-image: url('../sprites/Punching.gif');
     background-size: 100px 100px;
     position: absolute;
-    left: 1000px;
     height: 100px;
     width: 100px;
     transform: scaleX(-1);
+}
+
+/* Generic */
+
+.health-bar {
+    content: '';
+    position: absolute;
+    bottom: -110px;
+    width: 100px;
+    height: 5px;
+    background-color: green;
+    border: solid black 1px;
 }
