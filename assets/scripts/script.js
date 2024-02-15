@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.width = 100;
             this.height = 100;
             this.damage = damage;
-            this.weapon = 'bat';
+            this.weapon = 'daggers';
 
             this.direction = direction;
             this.people = people;

@@ -39,7 +39,15 @@
     position: absolute;
     height: 100px;
     width: 100px;
+}
 
+.person-daggers-right {
+    image-rendering: pixelated;
+    background-image: url('../sprites/Daggers.gif');
+    background-size: 100px 100px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
 }
 
 /* person facing left */
@@ -67,6 +75,16 @@
 .person-bat-left {
     image-rendering: pixelated;
     background-image: url('../sprites/Bat.gif');
+    background-size: 100px 100px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    transform: scaleX(-1);
+}
+
+.person-daggers-left {
+    image-rendering: pixelated;
+    background-image: url('../sprites/Daggers.gif');
     background-size: 100px 100px;
     position: absolute;
     height: 100px;
