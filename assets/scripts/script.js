@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             var direction = button.dataset.direction;
             var damage = eval(`${direction}Stats.person.damage`);
-            new Person(direction, damage);
+            var weapon = button.dataset.weapon;
+            new Person(direction, damage, weapon);
         });
     });
 
@@ -32,13 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     updateStats();
 
     class Person {
-        constructor(direction, damage) {
+        constructor(direction, damage, weapon) {
             this.x = null;
             this.y = 0; // This doesn't do anything.
             this.width = 100;
             this.height = 100;
             this.damage = damage;
-            this.weapon = 'daggers';
+            this.weapon = weapon;
 
             this.direction = direction;
             this.people = people;
