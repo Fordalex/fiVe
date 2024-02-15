@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateStats() {
-        document.getElementById('leftHealth').innerText = leftStats.health;
-        document.getElementById('rightHealth').innerText = rightStats.health;
+        document.getElementById('leftHealth').innerText = `Health: ${leftStats.health}`;
+        document.getElementById('rightHealth').innerText = `Health: ${rightStats.health}`
         document.getElementById('leftPersonStats').innerText = `Damage: ${leftStats.person.damage}`;
         document.getElementById('rightPersonStats').innerText = `Damage: ${rightStats.person.damage}`;
     }
@@ -34,10 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
     class Person {
         constructor(direction, damage) {
             this.x = null;
-            this.y = 0;
+            this.y = 0; // This doesn't do anything.
             this.width = 100;
             this.height = 100;
             this.damage = damage;
+            this.weapon = 'bat';
 
             this.direction = direction;
             this.people = people;
@@ -91,14 +92,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setCurrentAnimation() {
             this.person.classList.remove(`person-walking-${this.direction}`);
-            this.person.classList.remove(`person-attacking-${this.direction}`);
+            this.person.classList.remove(`person-${this.weapon}-${this.direction}`);
 
             if (this.state === 'walking') {
                 this.person.classList.add(`person-walking-${this.direction}`);
             }
 
             if (this.state === 'attacking') {
-                this.person.classList.add(`person-attacking-${this.direction}`);
+                this.person.classList.add(`person-${this.weapon}-${this.direction}`);
             }
         }
         
@@ -135,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         canMove() {
             for (let otherPerson of this.people) {
-                if (otherPerson !== this) {
+                if (otherPerson !== this && otherPerson.direction !== this.direction) {
                     if (Math.abs(this.x - otherPerson.x) <= this.width - 45) {
                         this.personInFrontOfYou = otherPerson;
                         return false;
