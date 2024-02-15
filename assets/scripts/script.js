@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const leftStats = {
         health: 100,
         person: {
-            damage: 10,
+            damage: 1,
         }
     }
     const rightStats = {
         health: 100,
         person: {
-            damage: 10,
+            damage: 1,
         }
     }
 
@@ -54,12 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         createPerson() {
-            this.x = this.direction === 'left' ? 1000 : 0;
+            this.x = this.direction === 'left' ? 200 : 0;
 
             var person = document.createElement('div');
             person.style.position = 'absolute';
             person.style.left = `${this.x}px`;
-            person.classList.add(`person-walking-${this.direction}`);
+            person.classList.add(this.direction)
+            person.classList.add('person-walking');
             gameContainer.appendChild(person);
             this.person = person;
             this.personInFrontOfYou = null;
@@ -73,6 +74,21 @@ document.addEventListener('DOMContentLoaded', () => {
             healthBar.classList.add('health-bar');
             gameContainer.appendChild(healthBar);
             this.healthBar = healthBar;
+        }
+        
+        createBlood() {
+            var blood = document.createElement('div');
+            blood.style.position = 'absolute';
+            blood.style.width = '100px';
+            blood.style.height = '100px';
+            blood.style.left = `${this.x}px`;
+            blood.style.top = `${this.y - 20}px`;
+            blood.classList.add(this.direction);
+            blood.classList.add('blood');
+            gameContainer.appendChild(blood);
+            setTimeout(() => {
+                blood.remove();
+            }, 200);
         }
 
         update() {
@@ -92,15 +108,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         setCurrentAnimation() {
-            this.person.classList.remove(`person-walking-${this.direction}`);
-            this.person.classList.remove(`person-${this.weapon}-${this.direction}`);
+            this.person.classList.remove(`person-walking`);
+            this.person.classList.remove(`person-${this.weapon}`);
 
             if (this.state === 'walking') {
-                this.person.classList.add(`person-walking-${this.direction}`);
+                this.person.classList.add(`person-walking`);
             }
 
             if (this.state === 'attacking') {
-                this.person.classList.add(`person-${this.weapon}-${this.direction}`);
+                this.person.classList.add(`person-${this.weapon}`);
             }
         }
         
@@ -113,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         attack() {
             if (this.personInFrontOfYou) {
                 this.personInFrontOfYou.attacked(this.damage);
+                this.createBlood();
             }
         }
 

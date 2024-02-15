@@ -12,9 +12,9 @@
     padding: 30px;
 }
 
-/* person facing right */
+/* person */
 
-.person-walking-right {
+.person-walking {
     image-rendering: pixelated;
     background-image: url('../sprites/Walking.gif');
     background-size: 100px 100px;
@@ -23,7 +23,7 @@
     width: 100px;
 }
 
-.person-punch-right {
+.person-punch {
     image-rendering: pixelated;
     background-image: url('../sprites/Punching.gif');
     background-size: 100px 100px;
@@ -32,7 +32,7 @@
     width: 100px;
 }
 
-.person-bat-right {
+.person-bat {
     image-rendering: pixelated;
     background-image: url('../sprites/Bat.gif');
     background-size: 100px 100px;
@@ -41,7 +41,7 @@
     width: 100px;
 }
 
-.person-daggers-right {
+.person-daggers {
     image-rendering: pixelated;
     background-image: url('../sprites/Daggers.gif');
     background-size: 100px 100px;
@@ -50,49 +50,21 @@
     width: 100px;
 }
 
-/* person facing left */
-
-.person-walking-left {
-    image-rendering: pixelated;
-    background-image: url('../sprites/Walking.gif');
-    background-size: 100px 100px;
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    transform: scaleX(-1);
-}
-
-.person-punch-left {
-    image-rendering: pixelated;
-    background-image: url('../sprites/Punching.gif');
-    background-size: 100px 100px;
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    transform: scaleX(-1);
-}
-
-.person-bat-left {
-    image-rendering: pixelated;
-    background-image: url('../sprites/Bat.gif');
-    background-size: 100px 100px;
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    transform: scaleX(-1);
-}
-
-.person-daggers-left {
-    image-rendering: pixelated;
-    background-image: url('../sprites/Daggers.gif');
-    background-size: 100px 100px;
-    position: absolute;
-    height: 100px;
-    width: 100px;
+.left {
     transform: scaleX(-1);
 }
 
 /* Generic */
+
+.blood {
+    image-rendering: pixelated;
+    background-image: url('../sprites/Blood.gif');
+    background-size: 100px 100px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    opacity: 0.2;
+}
 
 .health-bar {
     content: '';
